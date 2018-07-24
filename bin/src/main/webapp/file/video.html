@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	function get(){
+//		alert(1111);
+//		window.opener.document.getElementById('adName').value='123123123';
+		//var va = window.opener.document.getElementById('adName').value;
+//		alert(va);
+		
+		//var fileObj=window.opener.document.getElementById("file");  
+		var ss = window.opener.document.getElementById('videoViewPlay').value;
+		// fileObj.files[0]代表文件选择框选择的第一个文件  
+		//var src = window.URL.createObjectURL(fileObj.files[0]);  
+		//var vdo = document.createElement('video');  
+		//vdo.src = src;
+		//vdo.src = ss;
+//		vdo.controls = "controls";
+		//vdo.autoplay = "autoplay";
+//		vdo.loop = "loop";
+        //loop="loop"
+		//document.getElementById('media').appendChild(vdo);
+		
+		var video = document.getElementById("video1");
+		video.addEventListener('ended', setButton);
+        video.src = ss;
+        video.load(); //如果短的话，可以加载完成之后再播放，监听 canplaythrough 事件即可
+        video.play();
+        function setButton(){
+        	alert(222);
+        }
+		
+/* 		var app = "<video width='320' height='240' controls='controls' autoplay='autoplay'>" + 
+		  "<source src='"+ src + "  type='video/mp4'>" + 
+		"</video>";
+		$("#vdo").after(app); */
+	}
+</script>
+</head>
+<body onLoad="get()">
+<!--      <input type="button" value="aaaa" onclick = "get()">
+     <input type="text" id="val" value=''>
+    <video width="320" height="240" controls="controls" autoplay="autoplay">
+  <source src="file:///C:/Users/MrLiao/Desktop/code/media/movie.ogg" type="video/ogg">
+  <source src="file:///C:/Users/MrLiao/Desktop/code/media/movie.ogg" type="video/ogg">
+</video>  -->
+<input type="hidden" id="vdo">
+	<div align='center' id='media'>
+		<video width="650" height="450" id="video1"
+			controls="controls"  autoplay>
+			<source src="" type="video/mp4" />
+		</video>
+	</div>
+</body>
+</html>

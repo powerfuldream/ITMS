@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../config/ehcache.xsd">  
+    <diskStore path="D:/myeclipse/2017/space/ehcache" />  
+    <!-- DefaultCache setting. -->  
+     <defaultCache  
+            maxElementsInMemory="1000"  
+            eternal="false"  
+            timeToIdleSeconds="120"  
+            timeToLiveSeconds="120"  
+            maxElementsOnDisk="1000000"  
+            overflowToDisk="true"   
+            memoryStoreEvictionPolicy="LRU">  
+              
+    </defaultCache>  
+    <!-- 二级缓存适用场景 
+            1. 对象很少被修改，但需要大量查询的
+            2. 不是很重要的数据，允许出现偶尔并发访问的 -->
+  
+    <!-- Special objects setting.  --> 
+  
+    <cache   
+         name="org.south.itms.entity.Area"  
+         maxElementsInMemory="3506"  
+         memoryStoreEvictionPolicy="LRU"   
+         eternal="true"   
+         diskPersistent="false"  
+         overflowToDisk="true"   
+         maxElementsOnDisk="1000000" />   
+  
+  
+  
+</ehcache>  

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+function get(){
+	var ss = window.opener.document.getElementById('videoViewPlay').value;
+	var video = document.getElementById("video1");
+	video.addEventListener('ended', setButton);
+    video.src = ss;
+    video.load(); //如果短的话，可以加载完成之后再播放，监听 canplaythrough 事件即可
+    video.play();
+    function setButton(){
+    	
+    }
+}
+</script>
+</head>
+<body onLoad="get()">
+<!--      <input type="button" value="aaaa" onclick = "get()">
+     <input type="text" id="val" value=''>
+    <video width="320" height="240" controls="controls" autoplay="autoplay">
+  <source src="file:///C:/Users/MrLiao/Desktop/code/media/movie.ogg" type="video/ogg">
+  <source src="file:///C:/Users/MrLiao/Desktop/code/media/movie.ogg" type="video/ogg">
+</video>  -->
+<input type="hidden" id="vdo">
+	<div align='center' id='media'>
+		<video width="650" height="450" id="video1"
+			controls="controls"  autoplay="autoplay">
+			<source src="" type="video/mp4" />
+		</video>
+	</div>
+</body>
+</html>
